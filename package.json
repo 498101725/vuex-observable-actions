@@ -40,7 +40,6 @@
   "license": "MIT",
   "homepage": "https://github.com/498101725/vuex-observable-actions",
   "files": [
-    "src",
     "lib",
     "LICENSE",
     "package.json",
@@ -67,7 +66,6 @@
   },
   "lint-staged": {
     "*.ts": [
-      "prettier --write",
       "tslint --fix",
       "git add"
     ]

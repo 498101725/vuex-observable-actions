@@ -1,5 +1,5 @@
 import { createStore } from 'vuex';
-import VuexObservableActions from '../../lib/index';
+import VuexObservableActions from 'vuex-observable-actions';
 import { map } from 'rxjs/operators';
 
 const epics = {
