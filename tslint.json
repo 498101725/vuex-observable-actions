@@ -1,0 +1,45 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:latest"],
+  "linterOptions": {
+    "exclude": ["node_modules"]
+  },
+  "jsRules": {},
+  "rules": {
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "no-object-literal-type-assertion": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "quotemark": [true, "single", "avoid-escape"],
+    "semicolon": [true, "never"],
+    "trailing-comma": [false, { "multiline": "always", "singleline": "never" }],
+    "no-implicit-dependencies": [true, ["@"]],
+    "only-arrow-functions": false,
+    "no-console": true,
+    "no-shadowed-variable": false,
+    "no-submodule-imports": false,
+    "interface-name": [true, "never-prefix"],
+    "no-angle-bracket-type-assertion": false,
+    "max-classes-per-file": [true, 3, "exclude-class-expressions"],
+    "no-bitwise": false,
+    "whitespace": [
+      false,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-separator",
+      "check-type"
+    ],
+    "max-line-length": [
+      true,
+      {
+        "limit": 200,
+        "ignore-pattern": "@TRACE ",
+        "check-strings": true,
+        "check-regex": true
+      }
+    ],
+    "max-file-line-count": [true, 500]
+  },
+  "rulesDirectory": []
+}

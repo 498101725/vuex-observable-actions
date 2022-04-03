@@ -1,0 +1,85 @@
+{
+  "name": "vuex-observable-actions",
+  "version": "0.0.1",
+  "description": "A vuex plugin that allows you to write actions as epics, where you can manage side effects in one action.",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "type": "module",
+  "dependencies": {
+    "rxjs": "^7.5.5"
+  },
+  "peerDependencies": {
+    "vuex": ">=3.0.0"
+  },
+  "scripts": {
+    "prepublish": "tsc",
+    "tsc:watch": "tsc --watch",
+    "lint:prettier": "prettier \"**/*.ts\" --check --ignore-path .gitignore",
+    "lint": "tslint src && npm run lint:prettier",
+    "format": "prettier \"**/*.ts\" --write --ignore-path .gitignore"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/498101725/vuex-observable-actions.git"
+  },
+  "keywords": [
+    "actions",
+    "vuex",
+    "observable",
+    "plugin",
+    "vue",
+    "redux",
+    "rxjs",
+    "middleware",
+    "redux-observable",
+    "vuex-observable",
+    "state",
+    "side effect"
+  ],
+  "author": "Susanne Liu",
+  "license": "MIT",
+  "homepage": "https://github.com/498101725/vuex-observable-actions",
+  "files": [
+    "lib",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@babel/types": "^7.17.0",
+    "@types/node": "14.0.27",
+    "@typescript-eslint/eslint-plugin": "^3.8.0",
+    "@typescript-eslint/parser": "^3.8.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.0.0",
+    "prettier": "^2.0.4",
+    "tslib": "^2.0.1",
+    "tslint": "^6.1.3",
+    "typescript": "^4.6.3"
+  },
+  "types": "lib/index.d.ts",
+  "eslintConfig": {
+    "extends": [
+      "eslint-config-prettier"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "avoid"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "tslint --fix",
+      "git add"
+    ]
+  }
+}
