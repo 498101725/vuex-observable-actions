@@ -16,7 +16,10 @@ export declare type Epic<
   Input extends EpicAction = any,
   Output extends Input = Input,
   Dependencies extends ActionContext<any, any> = any
- = (event: Observable<Input>, dependencies: Dependencies) => Observable<Output>
+> = (
+  event: Observable<Input>,
+  dependencies: Dependencies
+) => Observable<Output>
 
 export type ActionHandler = (event: EpicAction) => void
 
