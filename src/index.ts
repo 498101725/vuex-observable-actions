@@ -53,8 +53,7 @@ export default (epics: EpicMap, options: ObservableActionOptions = {}) => {
     store._actions = new Proxy(store._actions, {
       get(actions, type) {
         return (
-          actions[type] || [
-            payload =>
+          actions[type] || [payload =>
               Promise.resolve(
                 actionSubject$.next({
                   type,
