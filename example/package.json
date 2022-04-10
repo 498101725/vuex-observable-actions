@@ -19,6 +19,6 @@
     "rxjs": "^7.5.5",
     "vue": "^3.2.31",
     "vuex": "^4.0.2",
-    "vuex-observable-actions": "^0.0.6"
+    "vuex-observable-actions": "^0.0.7"
   }
 }

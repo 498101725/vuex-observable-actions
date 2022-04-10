@@ -1,6 +1,6 @@
 {
   "name": "vuex-observable-actions",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A vuex plugin that allows you to write actions as epics, where you can manage side effects in one action.",
   "main": "lib/index.js",
   "module": "lib/index.js",

@@ -19,18 +19,7 @@ export interface EpicMap {
   [name: string]: Epic
 }
 
-const registeredEpic = new Map<string, Epic>()
-
 export default (epics: EpicMap, options: ObservableActionOptions = {}) => {
-  if (typeof options.onActionStarted !== 'function') {
-    options.onActionStarted = () => undefined
-  }
-  if (typeof options.onActionFinished !== 'function') {
-    options.onActionFinished = () => undefined
-  }
-  if (typeof options.onError !== 'function') {
-    options.onError = () => undefined
-  }
   const QueueScheduler: any = queueScheduler.constructor
   const uniqueQueueScheduler: typeof queueScheduler = new QueueScheduler(
     (queueScheduler as any).schedulerActionCtor
@@ -43,9 +32,6 @@ export default (epics: EpicMap, options: ObservableActionOptions = {}) => {
 
   const observableActions = []
   Object.entries(epics).forEach(([type, epic]: [string, Epic]) => {
-    if (registeredEpic.has(type)) {
-      throw new Error(`Duplicate epic found: "${type}" is duplicately defined`)
-    }
     observableActions.push(makeAction(type, epic, options))
   })
   return store => {
@@ -67,11 +53,10 @@ export default (epics: EpicMap, options: ObservableActionOptions = {}) => {
     epic$
       .pipe(
         map(epic => {
-          const output$ = epic(action$, {
+          const output$ = epic(action$, state, {
             dispatch,
             commit,
             getters,
-            state,
             rootState,
             rootGetters,
           })

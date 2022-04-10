@@ -1,9 +1,9 @@
 import { createStore } from 'vuex';
-import VuexObservableActions from 'vuex-observable-actions';
 import { map } from 'rxjs/operators';
+import VuexObservableActions from 'vuex-observable-actions';
 
 const epics = {
-  increment: (action$, { state }) => {
+  increment: (action$, state) => {
     return action$.pipe(
       map(() => ({
         type: 'SET_COUNT',
